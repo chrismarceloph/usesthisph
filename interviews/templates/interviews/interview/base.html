@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>The Setup PH / Interviews</title>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link href="{{ STATIC_URL }}css/screen.css" media="screen" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width;initial-scale=1">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@usesthisph">
+        <meta name="twitter:creator" content="@chrismarceloph">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="stump">
+                <header>
+                    <h1><a href="/">The Setup PH</a></h1>
+                    <h2>Interviews</h2>
+                    <p id="tagline">What do people use to get stuff done?</p>
+                </header>
+
+                <nav id="main">
+                    <ul>
+                        <li><a href="/" title="The most recent interviews.">Home</a></li>
+                        <li><a href="/about/" title="A little more info about the site.">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <footer>
+                <p>This is the PH localization of The Setup. You can follow along via <a href="http://twitter.com/usesthisph/" title="The site's Twitter account.">Twitter</a> or <a href="https://www.facebook.com/groups/1415915948657282/">Facebook group</a>.</p>
+                <p>Everything here is free: the content via the <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="A Creative Commons license.">Attribution-Share Alike</a> license, the codebase via the <a href="https://github.com/chrismarceloph/usesthisph/blob/master/LICENSE">MIT License</a>.</p>
+                <p>Yes, you're awesome.</p>
+            </footer>
+        </div>
+    </body>
+</html>

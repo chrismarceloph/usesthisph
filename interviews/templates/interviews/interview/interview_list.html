@@ -1,0 +1,15 @@
+{% extends 'interviews/interview/base.html' %}
+
+{% block content %}
+    {% for interview in object_list %}
+    <article class="interviewee">
+        <a href="{% url "interviews_interview_detail" interview.slug %}" title="View an interview with {{ interview.name }}."><img src="{{ interview.portrait.url }}" width="500" height="335" class="portrait" alt="{{ interview.name }}"></a>
+        <h3 class="person"><a href="{% url "interviews_interview_detail" interview.slug %}" title="View an interview with {{ interview.name }}.">{{ interview.name }}</a></h3>
+        <p class="summary">{{ interview.summary }}</p>
+        <p class="details">
+        Posted <time datetime="{{ interview.date }}">{{ interview.date }}.</time>
+        </p>
+    </article>
+    {% endfor %}
+    {% include 'interviews/interview/pagination.html' %}
+{% endblock %}

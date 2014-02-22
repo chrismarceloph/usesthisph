@@ -1,0 +1,26 @@
+{% extends 'interviews/interview/base.html' %}
+
+{% block title %}{{ interview.name }}{% endblock %}
+
+{% block content %}
+    <article class="interview">
+        <img src="{{ interview.portrait.url }}" width="500" height="335" class="portrait" alt="{{ interview.name }}">
+        <h3 class="person">{{ interview.name }}</h3>
+        <p class="summary">{{ interview.summary }}</p>
+        <p class="details">
+            Posted <time datetime="{{ interview.date }}">{{ interview.date }}.</time>
+        </p>
+
+        <h4>Who are you, and what do you do?</h4>
+        {{ interview.question_0|linebreaks|safe }}
+
+        <h4>What hardware do you use?</h4>
+        {{ interview.question_1|linebreaks|safe }}
+
+        <h4>And what software?</h4>
+        {{ interview.question_2|linebreaks|safe }}
+
+        <h4>What would be your dream setup?</h4>
+        {{ interview.question_3|linebreaks|safe }}
+    </article>
+{% endblock %}

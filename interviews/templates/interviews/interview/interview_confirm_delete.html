@@ -1,0 +1,41 @@
+
+
+{% extends 'interviews/interview/base.html' %}
+
+{% load i18n %}
+
+{% block filename %}
+  /home/ubuntu/usesthisph/interviews/templates/interviews/interview/interview_confirm_delete.html
+{% endblock %}
+
+{% block title %}
+  {% trans "Interview Confirm Delete" %}
+{% endblock %}
+
+{% block header-link %}
+  <a href='{% url "interviews_interview_delete" pk=object.pk %}'>
+    {% trans "Interview Confirm Delete" %}
+  </a>
+{% endblock %}
+
+{% block header-description %}
+  {% trans "A view that displays a confirmation page (on GET) and deletes an existing object (on POST)." %}
+{% endblock %}
+
+{% block content %}
+  <h2>
+    {% trans "Delete this Interview?" %}
+  </h2>
+  <br />
+  {% include 'interviews/interview/object_table_detail.html' %}
+  <form action='' charset='utf-8' method='post'>
+    <fieldset>
+      {% csrf_token %}
+      <div class='form-actions'>
+        <button class='btn btn-danger' type='submit'>
+          {% trans "Delete" %}
+        </button>
+      </div>
+    </fieldset>
+  </form>
+{% endblock %}

@@ -1,0 +1,48 @@
+
+
+{% extends 'interviews/interview/base.html' %}
+
+{% load i18n %}
+
+{% block filename %}
+  /home/ubuntu/usesthisph/interviews/templates/interviews/interview/interview_archive.html
+{% endblock %}
+{% block title %}
+  {% trans "Interview Archive Index" %}
+{% endblock %}
+{% block breadcrumbs %}
+  <ul class='breadcrumb'>
+    <li>
+      <a href='{% url "interviews_interview_archive_index" %}'>
+        {% trans "Archive Index" %}
+      </a>
+    </li>
+  </ul>
+{% endblock %}
+{% block header-link %}
+  <a href='{% url "interviews_interview_archive_index" %}'>
+    {% trans "Interview Archive Index" %}
+  </a>
+{% endblock %}
+{% block header-description %}
+  {% trans "A top-level index page showing the latest objects, by date." %}
+{% endblock %}
+{% block content %}
+  <h2>
+    By Year
+  </h2>
+  <ul class='nav nav-tabs nav-stacked'>
+    {% for date in date_list %}
+      <li>
+        <a href='{% url "interviews_interview_year_archive" year=date.year %}'>
+          {{ date.year }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <h2>
+    {% trans "Recent Interviews" %}
+  </h2>
+  {% include 'interviews/interview/object_table_list.html' %}
+  {% include 'interviews/interview/pagination.html' %}
+{% endblock %}

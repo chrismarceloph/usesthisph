@@ -61,7 +61,7 @@ DATABASES = {
 
 ########## GENERAL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'Asia/Manila'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
@@ -199,9 +199,13 @@ THIRD_PARTY_APPS = (
 
     # Asynchronous task queue:
     'djcelery',
+
+    # Scaffolding
+    'generate_scaffold',
 )
 
 LOCAL_APPS = (
+    'interviews',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
